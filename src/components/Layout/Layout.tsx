@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar'
 import { Divider } from '@chakra-ui/react'
 
+
 interface LayoutProps {
   children: React.ReactNode;
 }
