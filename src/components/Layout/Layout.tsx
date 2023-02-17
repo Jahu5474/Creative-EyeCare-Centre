@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar'
 import { Divider } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
 
 interface LayoutProps {
@@ -13,6 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Navbar/>
         <Divider/>
         <main>{children}</main>
+        
         
         </>
     )

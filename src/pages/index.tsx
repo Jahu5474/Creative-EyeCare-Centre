@@ -104,76 +104,92 @@ const Home: NextPage = ()=>(
     <Divider p="5px"/>
     <Flex
       align="center"
-      h="50vh"
+      h="45vh"
     >
-      
+<motion.div
+  initial={{opacity: 0}}
+  animate={{opacity: 1, x: 2}}
+  transition={{duration:0.8}}
+>
       <Stack
         display={{ base: "flex", md: "flex" }}
         direction={{ base: "column", md: "row" }}
         width={{ base: "auto", md: "none" }}
         spacing={5}
       >
+      
         <Card maxW='xs'>
           <CardBody>
+            <Link href="/">
             <Image
               src='/images/DAILIES-TOTAL-90PACK.png'
               alt='Total'
-              borderRadius='md' />
+              borderRadius='md'
+              />
             <Stack mt='6' spacing='3'>
-              <Heading size='md'>Dailies Total 90PK</Heading>
-              <Text color='orange.400' fontSize='2xl'>
+              <Heading size='sm'>Dailies Total</Heading>
+              <Text color='orange.400' fontSize='xl'>
                 $86
               </Text>
             </Stack>
+            </Link>
           </CardBody>
         </Card>
 
+
         <Card maxW='xs'>
           <CardBody>
+            <Link href="/">
             <Image
               src='/images/AIR-OPTIX-PLUS-6PACK.png'
               alt='Optix'
               borderRadius='md' />
             <Stack mt='6' spacing='3'>
-              <Heading size='md'>Air Optix Plus 6PK</Heading>
-              <Text color='orange.400' fontSize='2xl'>
-                $86
+              <Heading size='sm'>Air Optix Plus</Heading>
+              <Text color='orange.400' fontSize='xl'>
+                $39
               </Text>
             </Stack>
+            </Link>
           </CardBody>
         </Card>
 
         <Card maxW='xs'>
           <CardBody>
+            <Link href="/">
             <Image
               src='/images/ACUVUE-OASYS-12PACK.png'
               alt='Oasys'
               borderRadius='md' />
             <Stack mt='6' spacing='3'>
-              <Heading size='md'>Dailies Total 90PK</Heading>
-              <Text color='orange.400' fontSize='2xl'>
-                $86
+              <Heading size='sm'>Acuvue Oasys Bi-Weekly</Heading>
+              <Text color='orange.400' fontSize='xl'>
+                $26
               </Text>
             </Stack>
+            </Link>
           </CardBody>
         </Card>
 
         <Card maxW='xs'>
           <CardBody>
+            <Link href="/">
             <Image
               src='/images/1-DAY-MOIST-90PACK.png'
               alt='Moist'
               borderRadius='md' />
             <Stack mt='6' spacing='3'>
-              <Heading size='md'>Dailies Total 90PK</Heading>
-              <Text color='orange.400' fontSize='2xl'>
-                $86
+              <Heading size='sm'>Acuvue 1 Day Moist 90Pk</Heading>
+              <Text color='orange.400' fontSize='xl'>
+                $66
               </Text>
             </Stack>
+            </Link>
           </CardBody>
         </Card>
         
       </Stack>
+      </motion.div>
     </Flex>
   </Container>
 
