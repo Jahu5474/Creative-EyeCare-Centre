@@ -2,7 +2,8 @@ import { NextPage } from 'next';
 import {Box, Flex, Container, Image, Heading, Text, Stack, Button, Card, CardBody, Divider, CardFooter, ButtonGroup} from "@chakra-ui/react"
 import Link from 'next/link'
 import { motion, MotionConfig, motionValue, useTransform } from 'framer-motion'
-import styles from '@emotion/styled'
+import ImageSlider from '../components/ImageSlider/ImageSlider'
+
 
 const Home: NextPage = ()=>(
   <Container
@@ -99,19 +100,21 @@ const Home: NextPage = ()=>(
       </motion.div>
     </Stack>
     <Stack direction="column" alignSelf="start">
-        <Heading size="lg">Best Seller</Heading>
+        <Heading size="md">Best Seller</Heading>
       </Stack>
     <Divider p="5px"/>
-    <Flex
+    {/* <Flex
       align="center"
-      h="45vh"
-    >
+      h="80vh"
+    > */}
+
 <motion.div
   initial={{opacity: 0}}
   animate={{opacity: 1, x: 2}}
   transition={{duration:0.8}}
 >
       <Stack
+        
         display={{ base: "flex", md: "flex" }}
         direction={{ base: "column", md: "row" }}
         width={{ base: "auto", md: "none" }}
@@ -190,7 +193,91 @@ const Home: NextPage = ()=>(
         
       </Stack>
       </motion.div>
-    </Flex>
+
+    {/* </Flex> */}
+    <Stack direction="column" alignSelf="start">
+        <Heading size="md">New Products</Heading>
+      </Stack>
+    <Divider p="5px"/>
+  
+    <Stack
+        
+        display={{ base: "flex", md: "flex" }}
+        direction={{ base: "column", md: "row" }}
+        width={{ base: "auto", md: "none" }}
+        spacing={5}
+      >
+    <Card maxW='xs' display="flex">
+          <CardBody>
+            <Link href="/">
+            <Image
+              src='/images/PRECISION-1-DAY-90PACK.png'
+              alt='Precision'
+              borderRadius='md'
+              />
+            <Stack mt='6' spacing='3'>
+              <Heading size='sm'>Precision 1 Day 90PK</Heading>
+              <Text color='orange.400' fontSize='xl'>
+                $72
+              </Text>
+            </Stack>
+            </Link>
+          </CardBody>
+        </Card>
+
+
+        <Card maxW='xs'>
+          <CardBody>
+            <Link href="/">
+            <Image
+              src='/images/PRECISION-1-DAY-30PACK.png'
+              alt='Precision'
+              borderRadius='md' />
+            <Stack mt='6' spacing='3'>
+              <Heading size='sm'>Precision 1 Day 30PK</Heading>
+              <Text color='orange.400' fontSize='xl'>
+                $37
+              </Text>
+            </Stack>
+            </Link>
+          </CardBody>
+        </Card>
+
+        <Card maxW='xs'>
+          <CardBody>
+            <Link href="/">
+            <Image
+              src='/images/1-DAY-OASYS-90PACK.png'
+              alt='Oasys'
+              borderRadius='md' />
+            <Stack mt='6' spacing='3'>
+              <Heading size='sm'>Acuvue Oasys 1 Day 90PK</Heading>
+              <Text color='orange.400' fontSize='xl'>
+                $86
+              </Text>
+            </Stack>
+            </Link>
+          </CardBody>
+        </Card>
+
+        <Card maxW='xs'>
+          <CardBody>
+            <Link href="/">
+            <Image
+              src='/images/1-DAY-OASYS-30PACK.png'
+              alt='Oasys'
+              borderRadius='md' />
+            <Stack mt='6' spacing='3'>
+              <Heading size='sm'>Acuvue Oasys 1 Day 30Pk</Heading>
+              <Text color='orange.400' fontSize='xl'>
+                $42
+              </Text>
+            </Stack>
+            </Link>
+          </CardBody>
+        </Card>
+        </Stack>
+    <ImageSlider/>
   </Container>
 
 );
