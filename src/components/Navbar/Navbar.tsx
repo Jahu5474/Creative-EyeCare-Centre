@@ -1,4 +1,4 @@
-import { Container, Flex, Image, Heading, Stack, Box, Menu, MenuButton, IconButton, MenuList, MenuItem, Button, Text } from '@chakra-ui/react';
+import { Container, Flex, Heading, Stack, Box, Menu, MenuButton, IconButton, MenuList, MenuItem, Button, Text } from '@chakra-ui/react';
 import React from 'react';
 import Link from "next/link"
 import { HamburgerIcon } from '@chakra-ui/icons';
@@ -16,7 +16,7 @@ function Navbar (){
         align="center"
     >
             <Flex align="center" mr={4}>
-                <Heading as="h1" size="lg">
+                <Heading as="h1" size={{base:"sm", md:"md"}}>
                     <Link href="/">
                         Creative <Text as="span" color="orange.400">Eyecare</Text> Centre
                     </Link>
@@ -31,31 +31,61 @@ function Navbar (){
             justify="center"
         >
             <Link href="/brands">
-                <Button size="sm" variant="navbar">
+                <Button 
+                    size="sm" 
+                    variant="navbar"
+                    _hover={{
+                        color:"orange.400"
+                    }}
+                >
                     Brands
                 </Button>
             </Link>
 
             <Link href="/contactlens">
-                <Button size="sm" variant="navbar">
+                <Button 
+                    size="sm" 
+                    variant="navbar"
+                    _hover={{
+                        color:"orange.400"
+                    }}    
+                >
                     Contact Lens
                 </Button>
             </Link>
 
             <Link href="/location">
-                <Button size="sm" variant="navbar">
+                <Button 
+                    size="sm" 
+                    variant="navbar"
+                    _hover={{
+                        color:"orange.400"
+                    }}
+                >
                     Location
                 </Button>
             </Link>
 
             <Link href="/contactus">
-                <Button size="sm" variant="navbar">
+                <Button 
+                    size="sm" 
+                    variant="navbar"
+                    _hover={{
+                        color:"orange.400"
+                    }}    
+                >
                     Contact Us
                 </Button>
             </Link>
 
             <Link href="/my-acount">
-                <Button size="sm" variant="navbar">
+                <Button 
+                    size="sm" 
+                    variant="navbar"
+                    _hover={{
+                        color:"orange.400"
+                    }}
+                    >
                     My Account
                 </Button>
             </Link>
@@ -77,14 +107,28 @@ function Navbar (){
                                 Brands
                             </MenuItem>
                         </Link>
+
                         <Link href="contactlens" passHref>
                         <MenuItem >
                             Contact Lens
                         </MenuItem>
                         </Link>
+
                         <Link href="location" passHref>
                         <MenuItem >
                             Location
+                        </MenuItem>
+                        </Link>
+
+                        <Link href="contactus" passHref>
+                        <MenuItem >
+                            Contact Us
+                        </MenuItem>
+                        </Link>
+
+                        <Link href="myaccount" passHref>
+                        <MenuItem >
+                            My Account
                         </MenuItem>
                         </Link>
                     </MenuList>

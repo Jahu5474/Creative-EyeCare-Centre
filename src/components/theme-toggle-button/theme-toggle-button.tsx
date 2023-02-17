@@ -6,9 +6,13 @@ const ThemeToggleButton = () => {
     const { toggleColorMode } = useColorMode ()
 
     return(
-        <IconButton aria-label="Toggle theme"
+        <IconButton 
+        aria-label="Toggle theme"
         icon={useColorModeValue(<FiMoon/>, <FiSun/>)}
         variant="transparent"
+        _hover={{
+            color:"orange.400"
+        }}
         onClick={toggleColorMode}>
         </IconButton>
     )
