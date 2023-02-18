@@ -3,6 +3,7 @@ import {Box, Flex, Container, Image, Heading, Text, Stack, Button, Card, CardBod
 import Link from 'next/link'
 import { motion, MotionConfig, motionValue, useTransform } from 'framer-motion'
 import ImageSlider from '../components/ImageSlider/ImageSlider'
+import Footer from '../components/Footer/Footer'
 
 
 const Home: NextPage = ()=>(
@@ -193,6 +194,11 @@ const Home: NextPage = ()=>(
         
       </Stack>
       </motion.div>
+<motion.div
+  initial={{opacity: 0}}
+  animate={{opacity: 1, x: 2}}
+  transition={{duration:0.8}}
+>
     <Stack direction="column" alignSelf="start">
         <Heading size="md">New Products</Heading>
       </Stack>
@@ -276,6 +282,7 @@ const Home: NextPage = ()=>(
           </CardBody>
         </Card>
         </Stack>
+  </motion.div>
   </Container>
 
 );
