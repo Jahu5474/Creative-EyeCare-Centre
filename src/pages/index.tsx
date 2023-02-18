@@ -95,7 +95,10 @@ const Home: NextPage = ()=>(
             boxShadow="lg"
             objectFit="cover"
             borderRadius="md"
-            src="/images/jimin.png" alt="jimin" />
+            src="/images/jimin.png" 
+            alt="jimin"
+            mb="4"
+            />
         </Box>
       </motion.div>
     </Stack>
@@ -103,10 +106,6 @@ const Home: NextPage = ()=>(
         <Heading size="md">Best Seller</Heading>
       </Stack>
     <Divider p="5px"/>
-    {/* <Flex
-      align="center"
-      h="80vh"
-    > */}
 
 <motion.div
   initial={{opacity: 0}}
@@ -114,11 +113,12 @@ const Home: NextPage = ()=>(
   transition={{duration:0.8}}
 >
       <Stack
-        
         display={{ base: "flex", md: "flex" }}
         direction={{ base: "column", md: "row" }}
         width={{ base: "auto", md: "none" }}
         spacing={5}
+        mt="4"
+        mb="4"
       >
       
         <Card maxW='xs'>
@@ -193,19 +193,18 @@ const Home: NextPage = ()=>(
         
       </Stack>
       </motion.div>
-
-    {/* </Flex> */}
     <Stack direction="column" alignSelf="start">
         <Heading size="md">New Products</Heading>
       </Stack>
     <Divider p="5px"/>
   
     <Stack
-        
         display={{ base: "flex", md: "flex" }}
         direction={{ base: "column", md: "row" }}
         width={{ base: "auto", md: "none" }}
         spacing={5}
+        mt="4"
+        mb="4"
       >
     <Card maxW='xs' display="flex">
           <CardBody>
@@ -277,7 +276,6 @@ const Home: NextPage = ()=>(
           </CardBody>
         </Card>
         </Stack>
-    <ImageSlider/>
   </Container>
 
 );
