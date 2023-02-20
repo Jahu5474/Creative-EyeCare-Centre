@@ -3,7 +3,8 @@ import React from 'react';
 import Link from "next/link"
 import { HamburgerIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from '../theme-toggle-button/theme-toggle-button';
-
+import AuthButton from './AuthButton'
+import AuthModal from '../Modal/Auth/AuthModal'
 
 
 function Navbar (){
@@ -77,18 +78,8 @@ function Navbar (){
                     Contact Us
                 </Button>
             </Link>
+            <AuthButton/>
 
-            <Link href="/my-acount">
-                <Button 
-                    size="sm" 
-                    variant="navbar"
-                    _hover={{
-                        color:"orange.400"
-                    }}
-                    >
-                    My Account
-                </Button>
-            </Link>
             
         </Stack>
         <Box flex={1} align="right">

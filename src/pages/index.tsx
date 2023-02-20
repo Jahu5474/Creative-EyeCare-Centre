@@ -27,7 +27,7 @@ const Home: NextPage = ()=>(
     >
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, x: 5 }}
+        animate={{ opacity: 1, x: 3 }}
         transition={{ duration: 0.8 }}
       >
         <Box
@@ -88,7 +88,7 @@ const Home: NextPage = ()=>(
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, x: -5 }}
+        animate={{ opacity: 1, x: -3 }}
         transition={{ duration: 0.8 }}
       >
         <Box>

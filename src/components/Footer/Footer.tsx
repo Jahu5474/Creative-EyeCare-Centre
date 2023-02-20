@@ -71,13 +71,13 @@ function Footer() {
                 1120 Robson Street Vancouver, BC, V63 1B2
               </Text>
               <Text>
-                (604)423-3603
+              (604)423-3603
               </Text>
               <Text>
-                info@creativeeyecare.com
+              info@creativeeyecare.com
               </Text>
               <Text>
-                11am - 6pm
+              11am - 6pm
               </Text>
           </Stack>
         </Box>
