@@ -7,7 +7,7 @@ type LoginProps = {
 
 }
 
-const Login: React.FC<LoginProps> = () =>{
+const ResetPassword: React.FC<LoginProps> = () =>{
         const setAuthModalState = useSetRecoilState(authModalState); 
     const [LoginForm, setLoginForm] = useState({
         email:'',
@@ -28,12 +28,12 @@ const Login: React.FC<LoginProps> = () =>{
     return(
     <>
         <form onSubmit={onSubmit}>
-            <Input 
+            <Input
                 required
-                name='email' 
-                placeholder='email' 
-                type='email' 
-                mb={2}  
+                name='password'
+                placeholder='password'
+                type='password'
+                mb={2}
                 onChange={onChange}
                 fontSize="15px"
                 _placeholder={{
@@ -54,7 +54,7 @@ const Login: React.FC<LoginProps> = () =>{
             <Input
                 required
                 name='password'
-                placeholder='password'
+                placeholder='Confirm Password'
                 type='password'
                 mb={2}
                 onChange={onChange}
@@ -85,7 +85,7 @@ const Login: React.FC<LoginProps> = () =>{
                     border:"1px solid orange"
                 }}
             >
-                Log In
+                Submit
             </Button>
             <Flex
                 fontSize="sm"
@@ -95,7 +95,7 @@ const Login: React.FC<LoginProps> = () =>{
                     mr={1}
 
                 >
-                    Don&apos;t have an account? 
+                    Already have an account?
                 </Text>
                 <Text 
                     color="orange.400"
@@ -104,31 +104,16 @@ const Login: React.FC<LoginProps> = () =>{
                     onClick={()=>{
                         setAuthModalState((prev) => ({
                             ...prev,
-                            view:"signup",
+                            view:"login",
                         }))
                     }}
                 >
-                    SIGN UP
+                    Login
                 </Text>
             </Flex>
-            <Text
-                color="orange.400"
-                fontSize="sm"
-                fontWeight="700"
-                cursor="pointer"
-                mt={2}
-                onClick={()=>{
-                    setAuthModalState((prev)=>({
-                        ...prev,
-                        view:"resetPassword"
-                    }))
-                }}
-            >
-                Forgot Password
-            </Text>
         </form>
     </>
     )
 }
 
-export default Login;
+export default ResetPassword;

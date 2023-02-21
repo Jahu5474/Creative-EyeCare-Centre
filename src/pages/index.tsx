@@ -39,7 +39,7 @@ const Home: NextPage = ()=>(
           textAlign="center"
         >
           <Heading>Creative <Text as="span" color="orange.400">EyeCare</Text> Centre Inc.</Heading>
-          <Text p="10px" fontSize="lg" fontWeight="bold">
+          <Text p="10px" fontSize="lg" fontWeight="bold" align="left">
             Proudly serving you in Downtown Vancouver, BC since 1996.
             Get the best selection of eyewear and contact lenses.
           </Text>
