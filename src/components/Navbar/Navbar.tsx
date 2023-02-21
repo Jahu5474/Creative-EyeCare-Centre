@@ -78,8 +78,8 @@ function Navbar (){
                     Contact Us
                 </Button>
             </Link>
+            <AuthModal/>
             <AuthButton/>
-
             
         </Stack>
         <Box flex={1} align="right">
