@@ -15,7 +15,7 @@ function Footer() {
       mb="4"
       justify="space-between"
     >
-        <Box maxW="xs">
+        <Box maxW="xs" >
           <Stack spacing='3'>
             <Heading size='md'>About Us</Heading>
               <Text fontSize='md' alignSelf="start">

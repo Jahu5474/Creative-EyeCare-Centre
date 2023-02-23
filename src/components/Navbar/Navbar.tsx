@@ -55,7 +55,7 @@ function Navbar (){
                 </Button>
             </Link>
 
-            <Link href="/location">
+            <Link href="/Location">
                 <Button 
                     size="sm" 
                     variant="navbar"
