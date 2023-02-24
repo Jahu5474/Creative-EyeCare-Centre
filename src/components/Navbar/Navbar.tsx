@@ -105,7 +105,7 @@ function Navbar (){
                         </MenuItem>
                         </Link>
 
-                        <Link href="location" passHref>
+                        <Link href="Location" passHref>
                         <MenuItem >
                             Location
                         </MenuItem>

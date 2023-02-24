@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion, MotionConfig, motionValue, useTransform } from 'framer-motion'
 import ImageSlider from '../components/ImageSlider/ImageSlider'
 import Footer from '../components/Footer/Footer'
+import Information from '../components/Information/Information'
 
 
 const Home: NextPage = ()=>(
@@ -283,6 +284,7 @@ const Home: NextPage = ()=>(
         </Card>
         </Stack>
   </motion.div>
+  <Information />
   </Container>
 
 );
