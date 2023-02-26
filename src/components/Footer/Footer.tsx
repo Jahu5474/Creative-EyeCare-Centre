@@ -5,20 +5,13 @@ function Footer() {
   return (
     <Container
       maxW="container.lg"
-      // centerContent
+      centerContent
     >
-      <Stack
-        display={{base:"flex", md:"flex"}}
-        direction={{base:"column", md:"row"}}
-        mb={4}
-        mt={4}
-      >
-        <Box>
-          <Text 
-            fontSize="md"
-          >&copy; 2023 Creative Eyecare Centre Inc. All rights reserved.</Text>
-        </Box>
-      </Stack>
+      <Flex as="footer" mt={6} mb={6}>
+      <Box flex="1">
+        <Text fontSize="md">&copy; 2023 Creative Eyecare Centre Inc. All rights reserved.</Text>
+      </Box>
+    </Flex>
     </Container>
   );
 }
