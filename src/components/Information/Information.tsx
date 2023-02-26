@@ -1,12 +1,14 @@
-import { Box, Flex, Text, Container, Card, CardBody, Stack, Heading, Button, transition } from "@chakra-ui/react";
+import React from 'react';
+import { Stack, Box, Heading, Text, Container, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 
-function Footer() {
-  return (
+
+const Information = () =>{
+    return(
     <Container
-      maxW="container.lg"
+        maxW="container.lg"
     >
-    <Stack
+        <Stack
       display={{ base: "flex", md: "flex" }}
       direction={{ base: "column", md: "row" }}
       width={{ base: "auto", md: "none" }}
@@ -14,13 +16,27 @@ function Footer() {
       mt="4"
       mb="4"
       justify="space-between"
+  
     >
-        <Box maxW="xs" >
-          <Stack spacing='3'>
-            <Heading size='md'>About Us</Heading>
-              <Text fontSize='md' alignSelf="start">
-                Creative Eyecare Centre, a Robson Street Staple in Vancouver BC, offers a professional eyewear experience where you can find in vogue frames and sunglasses, contact lenses from the most innovative manufacturers, and comprehensive sight testing from our experienced opticians.
-              </Text>
+        <Box maxW="xs">
+          <Heading size='md'>Connect with Us</Heading>
+          <Stack 
+            display={{base:"flex", md:"flex"}}
+            direction={{base:"column", md:"row"}}
+            spacing='5'
+            mt={3}
+            
+          >
+              <Box boxSize="30px">
+                <Link href="https://www.instagram.com/creative_eyecare/">
+                  <Image src="/images/instagram.png"/>
+                </Link>
+              </Box>
+              <Box boxSize="30px">
+              <Link href="https://www.facebook.com/profile.php?id=100084126632360">
+                  <Image src="/images/facebook.png"/>
+                </Link>
+              </Box>
           </Stack>
         </Box>
 
@@ -82,14 +98,8 @@ function Footer() {
           </Stack>
         </Box>
         </Stack>
-
-      <Flex as="footer" mt={6} mb={6}>
-      <Box flex="1" textAlign="center">
-        <Text fontSize="md">&copy; 2023 Creative Eyecare Centre Inc. All rights reserved.</Text>
-      </Box>
-    </Flex>
     </Container>
-  );
+    )
 }
 
-export default Footer;
+export default Information;

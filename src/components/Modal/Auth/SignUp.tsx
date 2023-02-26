@@ -2,24 +2,35 @@ import React, {useState} from 'react';
 import { Input, Button, Flex, Text } from '@chakra-ui/react'
 import { useSetRecoilState } from 'recoil'
 import { authModalState } from '../../../atoms/authModalAtom'
- 
-type LoginProps = {
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import { auth } from '../../../firebase/clientApp'
+import {FIREBASE_ERRORS} from '../../../firebase/errors'
 
-}
-
-const SignUp: React.FC<LoginProps> = () =>{
+const SignUp: React.FC = () =>{
         const setAuthModalState = useSetRecoilState(authModalState); 
-    const [LoginForm, setLoginForm] = useState({
+    const [signUpForm, setSignUpForm] = useState({
         email:'',
-        password:''
+        password:'',
+        confirmPassword:''
     });
 
-    const onSubmit = () =>{
+    const[error, setError] = useState('');
+    const [createUserWithEmailAndPassword, user, loading, userError] = 
+        useCreateUserWithEmailAndPassword(auth);
 
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) =>{
+        event.preventDefault();
+        if(error) setError("");
+        if(signUpForm.password !== signUpForm.confirmPassword){
+            setError("password do no match");
+            return;
+        }
+
+        createUserWithEmailAndPassword(signUpForm.email, signUpForm.password);
     }
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
-        setLoginForm(prev =>({
+        setSignUpForm(prev =>({
             ...prev,
             [event.target.name]: event.target.value,
         }));
@@ -76,7 +87,7 @@ const SignUp: React.FC<LoginProps> = () =>{
             />
             <Input
                 required
-                name='password'
+                name='confirmPassword'
                 placeholder='Confirm Password'
                 type='password'
                 mb={2}
@@ -97,8 +108,11 @@ const SignUp: React.FC<LoginProps> = () =>{
                 }}
                 bg="gray.50"
             />
+            <Text color="red" fontSize="sm" fontWeight="bold">
+                {error || 
+                    FIREBASE_ERRORS[userError?.message as keyof typeof FIREBASE_ERRORS]}
+            </Text>
             <Button
-                type="submit"
                 size="sm"
                 variant="outline"
                 mt={3}
@@ -107,6 +121,8 @@ const SignUp: React.FC<LoginProps> = () =>{
                     color:"orange.400",
                     border:"1px solid orange"
                 }}
+                type="submit"
+                isLoading={loading}
             >
                 Sign Up
             </Button>

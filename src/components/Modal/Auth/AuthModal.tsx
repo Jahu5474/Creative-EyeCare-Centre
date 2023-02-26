@@ -1,11 +1,15 @@
-import React from 'react';
-import {useDisclosure, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalCloseButton, ModalBody, Flex} from '@chakra-ui/react'
+import React, {useEffect} from 'react';
+import {useDisclosure, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalCloseButton, ModalBody, Flex, Text} from '@chakra-ui/react'
 import { authModalState } from '../../../atoms/authModalAtom'
 import { useRecoilState } from 'recoil'
 import AuthInputs from './AuthInputs'
+import OAuthButtons from './OAuthButtons';
+import { auth } from '../../../firebase/clientApp'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const AuthModal: React.FC = () =>{
     const [modalState, SetModalState] = useRecoilState(authModalState);
+    const [user, loading, error] = useAuthState(auth);
 
     const handleClose = () =>{
       SetModalState((prev) => ({
@@ -13,6 +17,11 @@ const AuthModal: React.FC = () =>{
         open: false,
       }));
     };
+
+    useEffect(()=>{
+      if(user) handleClose();
+      console.log('user', user);
+    }, [user]);
   return (
     <>
       <Modal isOpen={modalState.open} onClose={handleClose}>
@@ -37,6 +46,14 @@ const AuthModal: React.FC = () =>{
                   justify="center"
                   width="70%"
                 >
+                  <OAuthButtons/>
+                  <Text
+                    color="gray.400"
+                    fontWeight="700"
+                    fontSize="lg"
+                  >
+                      Or
+                  </Text>
                   <AuthInputs />
                 </Flex>
           </ModalBody>

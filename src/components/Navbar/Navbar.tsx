@@ -5,9 +5,12 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from '../theme-toggle-button/theme-toggle-button';
 import AuthButton from './AuthButton'
 import AuthModal from '../Modal/Auth/AuthModal'
+import { auth } from '../../firebase/clientApp'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 
 function Navbar (){
+    const [user, loading, error] = useAuthState(auth);
     return(
     <Container
         display="flex"
@@ -79,7 +82,7 @@ function Navbar (){
                 </Button>
             </Link>
             <AuthModal/>
-            <AuthButton/>
+            <AuthButton user={user}/>
             
         </Stack>
         <Box flex={1} align="right">
@@ -105,7 +108,7 @@ function Navbar (){
                         </MenuItem>
                         </Link>
 
-                        <Link href="location" passHref>
+                        <Link href="Location" passHref>
                         <MenuItem >
                             Location
                         </MenuItem>
