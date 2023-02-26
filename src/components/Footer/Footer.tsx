@@ -5,6 +5,7 @@ function Footer() {
   return (
     <Container
       maxW="container.lg"
+      centerContent
     >
     <Stack
       display={{ base: "flex", md: "flex" }}
@@ -18,7 +19,7 @@ function Footer() {
         <Box maxW="xs" >
           <Stack spacing='3'>
             <Heading size='md'>About Us</Heading>
-              <Text fontSize='md' alignSelf="start">
+              <Text fontSize='md'>
                 Creative Eyecare Centre, a Robson Street Staple in Vancouver BC, offers a professional eyewear experience where you can find in vogue frames and sunglasses, contact lenses from the most innovative manufacturers, and comprehensive sight testing from our experienced opticians.
               </Text>
           </Stack>
@@ -84,7 +85,7 @@ function Footer() {
         </Stack>
 
       <Flex as="footer" mt={6} mb={6}>
-      <Box flex="1">
+      <Box flex="1" textAlign="center">
         <Text fontSize="md">&copy; 2023 Creative Eyecare Centre Inc. All rights reserved.</Text>
       </Box>
     </Flex>
