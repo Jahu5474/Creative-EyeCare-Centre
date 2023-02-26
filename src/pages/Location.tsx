@@ -7,7 +7,7 @@ const Location: NextPage = () =>(
     <>
         <Container
             maxW="container.lg"
-            maxH="100vh"
+            minH="60vh"
             centerContent
         >
             <Stack
