@@ -42,7 +42,7 @@ const Home: NextPage = ()=>(
             Proudly serving you in Downtown Vancouver, BC since 1996.
             Get the best selection of eyewear and contact lenses.
           </Text>
-
+{/* 
           <Flex
             gap={{ base: "2", md: "10" }}
             direction={{ base: "column", md: "row" }}
@@ -81,7 +81,7 @@ const Home: NextPage = ()=>(
                 </Button>
               </Link>
             </motion.div>
-          </Flex>
+          </Flex> */}
 
         </Box>
       </motion.div>

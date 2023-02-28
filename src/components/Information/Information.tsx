@@ -16,7 +16,6 @@ const Information = () =>{
       mt="4"
       mb="4"
       justify="space-between"
-  
     >
         <Box maxW="xs">
           <Heading size='md'>Connect with Us</Heading>
@@ -25,7 +24,6 @@ const Information = () =>{
             direction={{base:"column", md:"row"}}
             spacing='5'
             mt={3}
-            
           >
               <Box boxSize="30px">
                 <Link href="https://www.instagram.com/creative_eyecare/">

@@ -28,18 +28,7 @@ const contactlens = () =>{
                     mt="4"
                     mb="4"
                 >
-                    <Box
-                    bg="gray.500"
-                    w="65%"
-                >
-                    <Heading
-                        size="md"
-                        textAlign="center"
-                    >
-                        Filter
-                    </Heading>
-                        
-                </Box>
+                     
                     
                     <Card maxW='xs' display="flex">
                         <CardBody>
@@ -113,6 +102,65 @@ const contactlens = () =>{
                      </CardBody>
                     </Card> */}
 
+                </Stack>
+                    
+                <Stack
+                    direction={{base:"column", md:"row"}}
+                >
+
+                    <Card maxW='xs' display="flex">
+                     <CardBody>
+                        <Link href="/">
+                        <Image
+                            src='/images/PRECISION-1-DAY-90PACK.png'
+                            alt='Precision'
+                            borderRadius='md'
+                        />
+                        <Stack mt='6' spacing='3'>
+                        <Heading size='sm'>Precision 1 Day 90PK</Heading>
+                        <Text color='orange.400' fontSize='xl'>
+                            $72
+                        </Text>
+                        </Stack>
+                        </Link>
+                     </CardBody>
+                    </Card>
+
+                    <Card maxW='xs' display="flex">
+                     <CardBody>
+                        <Link href="/">
+                        <Image
+                            src='/images/PRECISION-1-DAY-90PACK.png'
+                            alt='Precision'
+                            borderRadius='md'
+                        />
+                        <Stack mt='6' spacing='3'>
+                        <Heading size='sm'>Precision 1 Day 90PK</Heading>
+                        <Text color='orange.400' fontSize='xl'>
+                            $72
+                        </Text>
+                        </Stack>
+                        </Link>
+                     </CardBody>
+                    </Card>
+
+                    <Card maxW='xs' display="flex">
+                     <CardBody>
+                        <Link href="/">
+                        <Image
+                            src='/images/PRECISION-1-DAY-90PACK.png'
+                            alt='Precision'
+                            borderRadius='md'
+                        />
+                        <Stack mt='6' spacing='3'>
+                        <Heading size='sm'>Precision 1 Day 90PK</Heading>
+                        <Text color='orange.400' fontSize='xl'>
+                            $72
+                        </Text>
+                        </Stack>
+                        </Link>
+                     </CardBody>
+                    </Card>
                 </Stack>
                 </motion.div>
             </Container>
