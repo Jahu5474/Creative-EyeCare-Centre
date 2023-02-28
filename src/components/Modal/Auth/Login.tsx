@@ -81,7 +81,9 @@ const Login: React.FC<LoginProps> = () =>{
                 }}
                 bg="gray.50"
             />
-            <Text color="red" fontSize="sm" fontWeight="bold">{FIREBASE_ERRORS[error?.message as keyof typeof FIREBASE_ERRORS]}</Text>
+            <Text color="red" fontSize="sm" fontWeight="bold">
+                {FIREBASE_ERRORS[error?.message as keyof typeof FIREBASE_ERRORS]}
+            </Text>
             <Button
                 type="submit"
                 size="sm"
@@ -97,12 +99,33 @@ const Login: React.FC<LoginProps> = () =>{
                 Log In
             </Button>
             <Flex
+                mb={2}
+            >
+                <Text
+                    fontSize="9pt"
+                    mr={1}
+                >
+                    Forgot your password?
+                </Text>
+                <Text
+                    fontSize="9pt"
+                    cursor="pointer"
+                    color="orange.400"
+                    onClick={()=>{
+                        setAuthModalState((prev)=>({
+                            ...prev,
+                            view:"resetPassword"
+                        }))
+                    }}
+                >
+                    Reset
+                </Text>
+            </Flex>
+            <Flex
                 fontSize="sm"
-
             >
                 <Text
                     mr={1}
-
                 >
                     Don&apos;t have an account? 
                 </Text>
@@ -120,21 +143,6 @@ const Login: React.FC<LoginProps> = () =>{
                     SIGN UP
                 </Text>
             </Flex>
-            <Text
-                color="orange.400"
-                fontSize="sm"
-                fontWeight="700"
-                cursor="pointer"
-                mt={2}
-                onClick={()=>{
-                    setAuthModalState((prev)=>({
-                        ...prev,
-                        view:"resetPassword"
-                    }))
-                }}
-            >
-                Forgot Password
-            </Text>
         </form>
     </>
     )
