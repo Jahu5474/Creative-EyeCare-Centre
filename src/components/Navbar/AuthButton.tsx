@@ -13,7 +13,14 @@ const AuthButton: React.FC<RightContentProps> = ({user}) =>{
     const setAuthModalState = useSetRecoilState(authModalState);
     return(
     <>
-    { user ? <Button size="md" variant="navbar" _hover={{color:"orange.400"}} onClick={()=>signOut(auth)}>LogOut</Button> :
+    { user ? <Button 
+                size="sm" 
+                variant="navbar" 
+                _hover={{color:"orange.400"}} 
+                onClick={()=>signOut(auth)}
+            >
+                LogOut
+            </Button> :
         <Button 
             size="sm" 
             variant="navbar"

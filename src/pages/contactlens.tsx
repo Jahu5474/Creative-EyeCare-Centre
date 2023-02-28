@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Stack, Image, Text, Heading, Card, CardBody } from '@chakra-ui/react'
+import { Box, Container, Stack, Image, Text, Heading, Card, CardBody, Divider } from '@chakra-ui/react'
 import Link from 'next/link';
 import {motion} from 'framer-motion'
 
@@ -11,7 +11,7 @@ const contactlens = () =>{
                 mt="30px"
                 m="auto"
                 maxW="container.lg"
-                minH="60vh"
+                minH="100vh"
                 centerContent
             >
             <motion.div
@@ -19,6 +19,7 @@ const contactlens = () =>{
                 animate={{opacity: 1, x: 2}}
                 transition={{duration:0.8}}
             >
+                
                 <Stack
                     display={{ base: "flex", md: "flex" }}
                     direction={{ base: "column", md: "row" }}
@@ -27,6 +28,19 @@ const contactlens = () =>{
                     mt="4"
                     mb="4"
                 >
+                    <Box
+                    bg="gray.500"
+                    w="65%"
+                >
+                    <Heading
+                        size="md"
+                        textAlign="center"
+                    >
+                        Filter
+                    </Heading>
+                        
+                </Box>
+                    
                     <Card maxW='xs' display="flex">
                         <CardBody>
                             <Link href="/">
@@ -81,7 +95,7 @@ const contactlens = () =>{
                      </CardBody>
                     </Card>
 
-                    <Card maxW='xs' display="flex">
+                    {/* <Card maxW='xs' display="flex">
                      <CardBody>
                         <Link href="/">
                         <Image
@@ -97,7 +111,7 @@ const contactlens = () =>{
                         </Stack>
                         </Link>
                      </CardBody>
-                    </Card>
+                    </Card> */}
 
                 </Stack>
                 </motion.div>
