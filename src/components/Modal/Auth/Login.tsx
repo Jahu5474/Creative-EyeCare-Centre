@@ -12,25 +12,27 @@ type LoginProps = {
 
 const Login: React.FC<LoginProps> = () =>{
         const setAuthModalState = useSetRecoilState(authModalState); 
-    const [LoginForm, setLoginForm] = useState({
+    const [loginForm, setLoginForm] = useState({
         email:'',
         password:''
     });
+
 
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
     const onSubmit = (event: React.FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
-
-        signInWithEmailAndPassword(LoginForm.email, LoginForm.password);
+        
+        signInWithEmailAndPassword(loginForm.email, loginForm.password);
     }
 
-    const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
-        setLoginForm(prev =>({
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>)=>{
+        setLoginForm((prev)=>({
             ...prev,
-            [event.target.name]: event.target.value,
-        }));
+            [event.target.name]: event.target.value
+        }))
     }
+
 
     return(
     <>
@@ -81,7 +83,7 @@ const Login: React.FC<LoginProps> = () =>{
                 }}
                 bg="gray.50"
             />
-            <Text color="red" fontSize="sm" fontWeight="bold">
+            <Text color="red" fontWeight={700} fontSize="sm">
                 {FIREBASE_ERRORS[error?.message as keyof typeof FIREBASE_ERRORS]}
             </Text>
             <Button
