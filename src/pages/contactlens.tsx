@@ -1,51 +1,8 @@
 import { Grid, GridItem, Box, Stack, Checkbox, CheckboxGroup, Text, Container, Image } from "@chakra-ui/react";
 import React from 'react'
+import {motion} from 'framer-motion'
+import {products, categories} from '../components/data'
 
-const categories = [
-  {
-    id: 1,
-    name: "Category 1",
-  },
-  {
-    id: 2,
-    name: "Category 2",
-  },
-  {
-    id: 3,
-    name: "Category 3",
-  },
-];
-
-const products = [
-  {
-    id: 1,
-    name: "Product 1",
-    image: "/images/1-DAY-MOIST-90PACK.png",
-    description: "Product 1 description",
-    categories: [1, 2],
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    image: "https://via.placeholder.com/150",
-    description: "Product 2 description",
-    categories: [2],
-  },
-  {
-    id: 3,
-    name: "Product 3",
-    image: "https://via.placeholder.com/150",
-    description: "Product 3 description",
-    categories: [1],
-  },
-  {
-    id: 4,
-    name: "Product 4",
-    image: "https://via.placeholder.com/150",
-    description: "Product 4 description",
-    categories: [2, 3],
-  },
-];
 
 const ProductShowcase = () => {
   const [selectedCategories, setSelectedCategories] = React.useState([]);
@@ -57,6 +14,7 @@ const ProductShowcase = () => {
   
 
   const filteredProducts = products.filter((product) => {
+    console.log(products.filter)
     if (selectedCategories.length === 0) {
       return true;
     }
@@ -67,6 +25,11 @@ const ProductShowcase = () => {
     <Container
         maxW="container.lg"
     >
+<motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, x: 3 }}
+        transition={{ duration: 0.8 }}
+      >
     <Stack display="flex" direction={{ base: "column", md: "row" }}  p={4} boxShadow="sm" mb={4} mt={4}>
         
           <Text fontSize="lg" fontWeight="bold">
@@ -90,6 +53,7 @@ const ProductShowcase = () => {
         </GridItem>
       ))}
     </Grid>
+    </motion.div>
     </Container>
   );
 };
