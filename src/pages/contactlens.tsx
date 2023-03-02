@@ -1,171 +1,97 @@
-import React from 'react';
-import { Box, Container, Stack, Image, Text, Heading, Card, CardBody, Divider } from '@chakra-ui/react'
-import Link from 'next/link';
-import {motion} from 'framer-motion'
+import { Grid, GridItem, Box, Stack, Checkbox, CheckboxGroup, Text, Container, Image } from "@chakra-ui/react";
+import React from 'react'
 
-const contactlens = () =>{
-    return(
-        <>
-            <Container
-                display="flex"
-                mt="30px"
-                m="auto"
-                maxW="container.lg"
-                minH="100vh"
-                centerContent
-            >
-            <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1, x: 2}}
-                transition={{duration:0.8}}
-            >
-                
-                <Stack
-                    display={{ base: "flex", md: "flex" }}
-                    direction={{ base: "column", md: "row" }}
-                    width={{ base: "auto", md: "none" }}
-                    spacing={5}
-                    mt="4"
-                    mb="4"
-                >
-                     
-                    
-                    <Card maxW='xs' display="flex">
-                        <CardBody>
-                            <Link href="/">
-                            <Image
-                                src='/images/PRECISION-1-DAY-90PACK.png'
-                                alt='Precision'
-                                borderRadius='md'
-                            />
-                            <Stack mt='6' spacing='3'>
-                            <Heading size='sm'>Precision 1 Day 90PK</Heading>
-                            <Text color='orange.400' fontSize='xl'>
-                                $72
-                            </Text>
-                            </Stack>
-                            </Link>
-                        </CardBody>
-                    </Card>
+const categories = [
+  {
+    id: 1,
+    name: "Category 1",
+  },
+  {
+    id: 2,
+    name: "Category 2",
+  },
+  {
+    id: 3,
+    name: "Category 3",
+  },
+];
 
-                    <Card maxW='xs' display="flex">
-                        <CardBody>
-                            <Link href="/">
-                            <Image
-                                src='/images/PRECISION-1-DAY-90PACK.png'
-                                alt='Precision'
-                                borderRadius='md'
-                            />
-                            <Stack mt='6' spacing='3'>
-                            <Heading size='sm'>Precision 1 Day 90PK</Heading>
-                            <Text color='orange.400' fontSize='xl'>
-                                $72
-                            </Text>
-                            </Stack>
-                            </Link>
-                        </CardBody>
-                    </Card>
+const products = [
+  {
+    id: 1,
+    name: "Product 1",
+    image: "/images/1-DAY-MOIST-90PACK.png",
+    description: "Product 1 description",
+    categories: [1, 2],
+  },
+  {
+    id: 2,
+    name: "Product 2",
+    image: "https://via.placeholder.com/150",
+    description: "Product 2 description",
+    categories: [2],
+  },
+  {
+    id: 3,
+    name: "Product 3",
+    image: "https://via.placeholder.com/150",
+    description: "Product 3 description",
+    categories: [1],
+  },
+  {
+    id: 4,
+    name: "Product 4",
+    image: "https://via.placeholder.com/150",
+    description: "Product 4 description",
+    categories: [2, 3],
+  },
+];
 
-                    <Card maxW='xs' display="flex">
-                     <CardBody>
-                        <Link href="/">
-                        <Image
-                            src='/images/PRECISION-1-DAY-90PACK.png'
-                            alt='Precision'
-                            borderRadius='md'
-                        />
-                        <Stack mt='6' spacing='3'>
-                        <Heading size='sm'>Precision 1 Day 90PK</Heading>
-                        <Text color='orange.400' fontSize='xl'>
-                            $72
-                        </Text>
-                        </Stack>
-                        </Link>
-                     </CardBody>
-                    </Card>
+const ProductShowcase = () => {
+  const [selectedCategories, setSelectedCategories] = React.useState([]);
 
-                    {/* <Card maxW='xs' display="flex">
-                     <CardBody>
-                        <Link href="/">
-                        <Image
-                            src='/images/PRECISION-1-DAY-90PACK.png'
-                            alt='Precision'
-                            borderRadius='md'
-                        />
-                        <Stack mt='6' spacing='3'>
-                        <Heading size='sm'>Precision 1 Day 90PK</Heading>
-                        <Text color='orange.400' fontSize='xl'>
-                            $72
-                        </Text>
-                        </Stack>
-                        </Link>
-                     </CardBody>
-                    </Card> */}
+  const handleCategoryChange = (selected) => {
+    const selectedIntegers = selected.map((value) => parseInt(value));
+    setSelectedCategories(selectedIntegers);
+  };
+  
 
-                </Stack>
-                    
-                <Stack
-                    direction={{base:"column", md:"row"}}
-                >
+  const filteredProducts = products.filter((product) => {
+    if (selectedCategories.length === 0) {
+      return true;
+    }
+    return product.categories.some((category) => selectedCategories.includes(category));
+  });
 
-                    <Card maxW='xs' display="flex">
-                     <CardBody>
-                        <Link href="/">
-                        <Image
-                            src='/images/PRECISION-1-DAY-90PACK.png'
-                            alt='Precision'
-                            borderRadius='md'
-                        />
-                        <Stack mt='6' spacing='3'>
-                        <Heading size='sm'>Precision 1 Day 90PK</Heading>
-                        <Text color='orange.400' fontSize='xl'>
-                            $72
-                        </Text>
-                        </Stack>
-                        </Link>
-                     </CardBody>
-                    </Card>
+  return (
+    <Container
+        maxW="container.lg"
+    >
+    <Stack display="flex" direction={{ base: "column", md: "row" }}  p={4} boxShadow="sm" mb={4} mt={4}>
+        
+          <Text fontSize="lg" fontWeight="bold">
+            Categories
+          </Text>
+        
+        <CheckboxGroup value={selectedCategories} onChange={handleCategoryChange}>
+          {categories.map((category) => (
+            <Checkbox key={category.id} value={category.id}>
+              {category.name}
+            </Checkbox>
+          ))}
+        </CheckboxGroup>
+      </Stack>
+    <Grid templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(1, 1fr)", lg: "repeat(4, 1fr)" }} gap={6}>
+      {filteredProducts.map((product) => (
+        <GridItem key={product.id}>
+          <Image src={product.image} alt={product.name} style={{width:"100%", height:"auto"}}/>
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+        </GridItem>
+      ))}
+    </Grid>
+    </Container>
+  );
+};
 
-                    <Card maxW='xs' display="flex">
-                     <CardBody>
-                        <Link href="/">
-                        <Image
-                            src='/images/PRECISION-1-DAY-90PACK.png'
-                            alt='Precision'
-                            borderRadius='md'
-                        />
-                        <Stack mt='6' spacing='3'>
-                        <Heading size='sm'>Precision 1 Day 90PK</Heading>
-                        <Text color='orange.400' fontSize='xl'>
-                            $72
-                        </Text>
-                        </Stack>
-                        </Link>
-                     </CardBody>
-                    </Card>
-
-                    <Card maxW='xs' display="flex">
-                     <CardBody>
-                        <Link href="/">
-                        <Image
-                            src='/images/PRECISION-1-DAY-90PACK.png'
-                            alt='Precision'
-                            borderRadius='md'
-                        />
-                        <Stack mt='6' spacing='3'>
-                        <Heading size='sm'>Precision 1 Day 90PK</Heading>
-                        <Text color='orange.400' fontSize='xl'>
-                            $72
-                        </Text>
-                        </Stack>
-                        </Link>
-                     </CardBody>
-                    </Card>
-                </Stack>
-                </motion.div>
-            </Container>
-        </>
-    )
-}
-
-export default contactlens;
+export default ProductShowcase;
