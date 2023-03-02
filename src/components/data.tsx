@@ -5,47 +5,52 @@ import React from 'react'
     export const categories = [
         {
           id: 1,
-          name: "Category 1",
+          name: "Daily Disposable",
         },
         {
           id: 2,
-          name: "Category 2",
+          name: "Bi-Weekly Disposable",
         },
         {
           id: 3,
-          name: "Category 3",
+          name: "Monthly Disposable",
         },
+        {
+          id: 4,
+          name: "Astigmatism"
+        },
+        {
+          id: 5,
+          name: "MultiFocal"
+        }
       ];
       
 export const products = [
         {
           id: 1,
-          name: "Product 1",
+          name: "Acuvue 1 Day Moist 90PK",
           image: "/images/1-DAY-MOIST-90PACK.png",
-          description: "Product 1 description",
-          categories: [1, 2],
-        },
-        {
-          id: 2,
-          name: "Product 2",
-          image: "https://via.placeholder.com/150",
-          description: "Product 2 description",
-          categories: [2],
-        },
-        {
-          id: 3,
-          name: "Product 3",
-          image: "https://via.placeholder.com/150",
-          description: "Product 3 description",
           categories: [1],
         },
         {
-          id: 4,
-          name: "Product 4",
-          image: "https://via.placeholder.com/150",
-          description: "Product 4 description",
-          categories: [2, 3],
+          id: 2,
+          name: "Acuvue 1 Day Moist 30PK",
+          image: "/images/1-DAY-MOIST-30PACK.png",
+          categories: [1],
         },
+        {
+          id: 3,
+          name: "Acuvue 1 Day Moist Astig 90PK",
+          image: "/images/1-DAY-MOIST-ASTIGMATISM-90PACK.png",
+          categories: [1, 4],
+        },
+        {
+          id: 4,
+          name: "Acuvue 1 Day Moist Astig 30PK",
+          image: "/images/1-DAY-MOIST-ASTIGMATISM-30PACK.png",
+          categories: [1, 4],
+        },
+        
       ];
 
 
