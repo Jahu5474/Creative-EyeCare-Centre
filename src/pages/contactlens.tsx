@@ -8,14 +8,13 @@ import {products, categories} from '../components/data'
 const ProductShowcase = () => {
   const [selectedCategories, setSelectedCategories] = React.useState([]);
 
-  const handleCategoryChange = (selected) => {
-    const selectedIntegers = selected.map((value) => parseInt(value));
+  const handleCategoryChange = (selected: string) => {
+    const selectedIntegers = selected.map((value: string) => parseInt(value));
     setSelectedCategories(selectedIntegers);
   };
   
 
   const filteredProducts = products.filter((product) => {
-    console.log(products.filter)
     if (selectedCategories.length === 0) {
       return true;
     }
@@ -54,7 +53,6 @@ const ProductShowcase = () => {
             >
             {product.name}
             </Heading>
-          <p>{product.description}</p>
         </GridItem>
       ))}
     </Grid>
