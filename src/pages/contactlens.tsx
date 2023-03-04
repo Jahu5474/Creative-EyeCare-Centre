@@ -53,6 +53,9 @@ const ProductShowcase = () => {
             >
             {product.name}
             </Heading>
+            <Text>
+            {product.price}
+            </Text>
         </GridItem>
       ))}
     </Grid>
