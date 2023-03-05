@@ -103,6 +103,13 @@ export const products = [
           price: "$38",
           categories: [1],
         },
+        {
+          id: 12,
+          name: "Acuvue 1 Day Trueye 90PK",
+          image: "/images/1-DAY-TRUEYE-90PACK.png",
+          price: "$38",
+          categories: [1],
+        },
         
         
       ];

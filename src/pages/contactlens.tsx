@@ -2,7 +2,7 @@ import { Grid, GridItem, Box, Stack, Checkbox, CheckboxGroup, Text, Container, I
 import React from 'react'
 import { GrFilter } from 'react-icons/gr'
 import {motion} from 'framer-motion'
-import {products, categories} from '../components/data'
+import {products, categories} from '../components/data/data'
 
 
 const ProductShowcase = () => {
