@@ -1,13 +1,27 @@
 import React from 'react'
 import { useState } from 'react'
-import { Heading, FormControl, FormLabel, FormErrorMessage, FormHelperText, Container, Input, Button } from '@chakra-ui/react'
+import { Heading, FormControl, FormLabel, FormErrorMessage, FormHelperText, Container, Input, Button, Text } from '@chakra-ui/react'
 
 function errorMessageForm() {
-    const [input, setInput] = useState('')
 
-    const handleInputChange = (e) => setInput(e.target.value)
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log("Form Submitted")
+    }
+    const [email, setEmail] = useState({
+        email: ''
+    });
 
-    const isError = input === ''
+    const [error, setError] = useState('')
+
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (error) setError("");
+        if (email.email === "") {
+            setError("Please Enter your Email")
+            return;
+        }
+    }
 
     return (
         <>
@@ -22,27 +36,23 @@ function errorMessageForm() {
                 >
                     Send Us A Message
                 </Heading>
-                <FormControl isInvalid={isError}>
+                <form onSubmit={onSubmit} >
                     <FormLabel htmlFor='email'>Email</FormLabel>
                     <Input
                         id='email'
                         type='email'
-                        value={input}
-                        onChange={handleInputChange}
+                        required
                     />
-                    {!isError ? (
-                        <FormHelperText>
-                            Enter the email you'd like to receive the newsletter on.
-                        </FormHelperText>
-                    ) : (
-                        <FormErrorMessage>Email is required.</FormErrorMessage>
-                    )}
-                    <Button
+                    <Text color="red">
+                        {error}
+                    </Text>
 
+                    <Button
+                        type="submit"
                     >
                         Submit
                     </Button>
-                </FormControl>
+                </form>
             </Container>
         </>
     )
