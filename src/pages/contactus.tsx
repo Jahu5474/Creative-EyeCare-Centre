@@ -94,7 +94,7 @@ function ContactUs() {
                     >
                         If you have any concerns or questions, please do not hesitate and contact us via email or phone, or by submitting the form below.
                     </Text>
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={onSubmit} action="/api/send-email" method='POST'>
 
                         <FormControl
                             display="flex"

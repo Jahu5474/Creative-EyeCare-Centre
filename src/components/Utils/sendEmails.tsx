@@ -1,12 +1,10 @@
-import fetch from 'isomorphic-unfetch';
-
-async function sendEmail() {
+async function sendEmail(formData) {
     const res = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({/* email data */ })
+        body: JSON.stringify(formData),
     });
     if (res.ok) {
         // email sent successfully
@@ -14,3 +12,13 @@ async function sendEmail() {
         // handle error
     }
 }
+
+// Example usage:
+const formData = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+};
+
+sendEmail(formData);
