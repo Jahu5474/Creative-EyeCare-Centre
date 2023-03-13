@@ -1,26 +1,30 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
-import type { NextApiRequest, NextApiResponse } from 'next';
 
-const sendGridConfig = {
-    apiKey: process.env.SENDGRID_API_KEY
-}
+const apiKey = process.env.SENDGRID_API_KEY;
 
-export default async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
-    const { name, email, message } = req.body;
+type EmailRequestBody = {
+    to: string;
+    from: string;
+    subject: string;
+    html: string;
+};
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    const { to, from, subject, html } = req.body as EmailRequestBody;
 
     const msg = {
-        to: 'juhynjuhn@gmail.com', // Replace with your own email address
-        from: email,
-        subject: `New message from ${name}`,
-        text: message,
-        html: `<p>${message}</p>`,
+        to,
+        from,
+        subject,
+        html,
     };
 
     try {
         await sgMail.send(msg);
-        res.status(200).send('Message sent successfully');
+        res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error sending message');
+        res.status(500).json({ message: 'Error sending email' });
     }
 }
