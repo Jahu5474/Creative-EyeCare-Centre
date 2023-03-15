@@ -9,128 +9,126 @@ import { auth } from '../../firebase/clientApp'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 
-function Navbar (){
+function Navbar() {
     const [user, loading, error] = useAuthState(auth);
-    return(
-    <Container
-        display="flex"
-        p={2}
-        maxW="container.lg"
-        wrap="wrap"
-        align="center"
-    >
+    return (
+        <Container
+            display="flex"
+            p={2}
+            maxW="container.lg"
+            wrap="wrap"
+            align="center"
+        >
             <Flex align="center" mr={4}>
-                <Heading as="h1" size={{base:"sm", md:"md"}}>
+                <Heading as="h1" size={{ base: "sm", md: "md" }}>
                     <Link href="/">
                         Creative <Text as="span" color="orange.400">Eyecare</Text> Centre
                     </Link>
                 </Heading>
             </Flex>
-        <Stack
-            direction={{base:"column", md:"row"}}
-            display={{base:"none", md:"flex"}}
-            width={{base:"full", md:"auto"}}
-            alignItems="center"
-            flexGrow={1}
-            justify="center"
-        >
-            <Link href="/brands">
-                <Button 
-                    size="sm" 
-                    variant="navbar"
-                    _hover={{
-                        color:"orange.400"
-                    }}
-                >
-                    Brands
-                </Button>
-            </Link>
+            <Stack
+                direction={{ base: "column", md: "row" }}
+                display={{ base: "none", md: "flex" }}
+                width={{ base: "full", md: "auto" }}
+                alignItems="center"
+                flexGrow={1}
+                justify="center"
+            >
+                <Link href="/brands">
+                    <Button
+                        size="sm"
+                        variant="navbar"
+                        _hover={{
+                            color: "orange.400"
+                        }}
+                    >
+                        Brands
+                    </Button>
+                </Link>
 
-            <Link href="/contactlens">
-                <Button 
-                    size="sm" 
-                    variant="navbar"
-                    _hover={{
-                        color:"orange.400"
-                    }}    
-                >
-                    Contact Lens
-                </Button>
-            </Link>
+                <Link href="/contactlens">
+                    <Button
+                        size="sm"
+                        variant="navbar"
+                        _hover={{
+                            color: "orange.400"
+                        }}
+                    >
+                        Contact Lens
+                    </Button>
+                </Link>
 
-            <Link href="/Location">
-                <Button 
-                    size="sm" 
-                    variant="navbar"
-                    _hover={{
-                        color:"orange.400"
-                    }}
-                >
-                    Location
-                </Button>
-            </Link>
+                <Link href="/Location">
+                    <Button
+                        size="sm"
+                        variant="navbar"
+                        _hover={{
+                            color: "orange.400"
+                        }}
+                    >
+                        Location
+                    </Button>
+                </Link>
 
-            <Link href="/contactus">
-                <Button 
-                    size="sm" 
-                    variant="navbar"
-                    _hover={{
-                        color:"orange.400"
-                    }}    
-                >
-                    Contact Us
-                </Button>
-            </Link>
-            <AuthModal/>
-            <AuthButton user={user}/>
-            
-        </Stack>
-        <Box flex={1} align="right">
-            <ThemeToggleButton/>
-            <Box ml={2} display={{base:"inline-block", md:"none"}}>
-                <Menu>
-                <MenuButton
-                    as={IconButton}
-                    aria-label='Options'
-                    icon={<HamburgerIcon />}
-                    variant='outline'
-                />
-                    <MenuList>
-                        <Link href="/brand" passHref>
-                            <MenuItem >
-                                Brands
+                <Link href="/contactus">
+                    <Button
+                        size="sm"
+                        variant="navbar"
+                        _hover={{
+                            color: "orange.400"
+                        }}
+                    >
+                        Contact Us
+                    </Button>
+                </Link>
+                <AuthModal />
+                <AuthButton user={user} />
+
+            </Stack>
+            <Box flex={1} align="right">
+                <ThemeToggleButton />
+                <Box ml={2} display={{ base: "inline-block", md: "none" }}>
+                    <Menu>
+                        <MenuButton
+                            as={IconButton}
+                            aria-label='Options'
+                            icon={<HamburgerIcon />}
+                            variant='outline'
+                        />
+                        <MenuList>
+                            <Link href="/brand" passHref>
+                                <MenuItem >
+                                    Brands
+                                </MenuItem>
+                            </Link>
+
+                            <Link href="contactlens" passHref>
+                                <MenuItem >
+                                    Contact Lens
+                                </MenuItem>
+                            </Link>
+
+                            <Link href="Location" passHref>
+                                <MenuItem >
+                                    Location
+                                </MenuItem>
+                            </Link>
+
+                            <Link href="contactus" passHref>
+                                <MenuItem >
+                                    Contact Us
+                                </MenuItem>
+                            </Link>
+                            <MenuItem>
+                                <AuthModal />
+                                <AuthButton user={user} />
                             </MenuItem>
-                        </Link>
-
-                        <Link href="contactlens" passHref>
-                        <MenuItem >
-                            Contact Lens
-                        </MenuItem>
-                        </Link>
-
-                        <Link href="Location" passHref>
-                        <MenuItem >
-                            Location
-                        </MenuItem>
-                        </Link>
-
-                        <Link href="contactus" passHref>
-                        <MenuItem >
-                            Contact Us
-                        </MenuItem>
-                        </Link>
-
-                        <Link href="myaccount" passHref>
-                        <MenuItem >
-                            My Account
-                        </MenuItem>
-                        </Link>
-                    </MenuList>
-                </Menu>
+                        </MenuList>
+                    </Menu>
+                </Box>
             </Box>
-        </Box>
-    </Container>
-        
+        </Container>
+
 
 
     )
