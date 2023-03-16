@@ -42,46 +42,7 @@ const Home: NextPage = () => (
             Proudly serving you in Downtown Vancouver, BC since 1996.
             Get the best selection of eyewear and contact lenses.
           </Text>
-          {/* 
-          <Flex
-            gap={{ base: "2", md: "10" }}
-            direction={{ base: "column", md: "row" }}
-          >
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-            >
-              <Link href="/shop">
-                <Button
-                  border="1px solid gray"
-                  size="lg"
-                  variant="outline"
-                  _hover={{
-                    color: "orange",
-                    borderColor: "orange"
-                  }}
-                >
-                  Shop Online
-                </Button>
-              </Link>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-            >
-              <Link href="/instore">
-                <Button
-                  border="1px solid gray"
-                  size="lg"
-                  variant="outline"
-                  _hover={{
-                    color: "orange",
-                    borderColor: "orange"
-                  }}
-                >
-                  Shop Instore
-                </Button>
-              </Link>
-            </motion.div>
-          </Flex> */}
+
 
         </Box>
       </motion.div>
@@ -179,7 +140,7 @@ const Home: NextPage = () => (
             <Link href="/">
               <Image
                 src='/images/1-DAY-MOIST-90PACK.png'
-                alt='Moist'
+                alt='1DayMoist'
                 borderRadius='md' />
               <Stack mt='6' spacing='3'>
                 <Heading size='sm'>Acuvue 1 Day Moist 90Pk</Heading>

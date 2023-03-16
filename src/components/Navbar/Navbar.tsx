@@ -16,8 +16,8 @@ function Navbar() {
             display="flex"
             p={2}
             maxW="container.lg"
-            wrap="wrap"
-            align="center"
+            flexWrap="wrap"
+            alignItems="center"
         >
             <Flex align="center" mr={4}>
                 <Heading as="h1" size={{ base: "sm", md: "md" }}>
@@ -85,7 +85,7 @@ function Navbar() {
                 <AuthButton user={user} />
 
             </Stack>
-            <Box flex={1} align="right">
+            <Box flex={1} alignItems="right">
                 <ThemeToggleButton />
                 <Box ml={2} display={{ base: "inline-block", md: "none" }}>
                     <Menu>

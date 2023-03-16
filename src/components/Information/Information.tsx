@@ -27,12 +27,12 @@ const Information = () => {
           >
             <Box boxSize="30px">
               <Link href="https://www.instagram.com/creative_eyecare/">
-                <Image src="/images/instagram.png" />
+                <Image src="/images/instagram.png" alt="ig" />
               </Link>
             </Box>
             <Box boxSize="30px">
               <Link href="https://www.facebook.com/profile.php?id=100084126632360">
-                <Image src="/images/facebook.png" />
+                <Image src="/images/facebook.png" alt="fb" />
               </Link>
             </Box>
           </Stack>

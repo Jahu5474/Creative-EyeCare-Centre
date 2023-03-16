@@ -26,46 +26,46 @@ const Brands = () => {
 
                     >
                         <GridItem>
-                            <Image src="/images/s1-10.png" />
+                            <Image src="/images/s1-10.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Tom-Ford-logo.png" />
+                            <Image src="/images/Tom-Ford-logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Prada-Logo.png" />
+                            <Image src="/images/Prada-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Celine-Logo.png" />
+                            <Image src="/images/Celine-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Saint-Laurent-Logo.png" />
+                            <Image src="/images/Saint-Laurent-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Lindberg.png" />
+                            <Image src="/images/Lindberg.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Chloe-Logo.png" />
+                            <Image src="/images/Chloe-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Bottega-Veneta-Logo.png" />
+                            <Image src="/images/Bottega-Veneta-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Chanel-Logo.png" />
+                            <Image src="/images/Chanel-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Givenchy-Logo.png" />
+                            <Image src="/images/Givenchy-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Dolce-And-Gabbana-Logo.png" />
+                            <Image src="/images/Dolce-And-Gabbana-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/RayBan-Logo.png" />
+                            <Image src="/images/RayBan-Logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Oakely-logo.png" />
+                            <Image src="/images/Oakely-logo.png" alt="brands" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Dior-logo.png" />
+                            <Image src="/images/Dior-logo.png" alt="brands" />
                         </GridItem>
                     </Grid>
                 </Stack>
