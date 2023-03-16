@@ -61,6 +61,12 @@ const Brands = () => {
                         <GridItem>
                             <Image src="/images/RayBan-Logo.png" />
                         </GridItem>
+                        <GridItem>
+                            <Image src="/images/Oakely-logo.png" />
+                        </GridItem>
+                        <GridItem>
+                            <Image src="/images/Dior-logo.png" />
+                        </GridItem>
                     </Grid>
                 </Stack>
             </Container>
