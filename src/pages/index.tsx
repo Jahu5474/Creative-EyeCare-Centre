@@ -140,7 +140,7 @@ const Home: NextPage = () => (
             <Link href="/">
               <Image
                 src='/images/1-DAY-MOIST-90PACK.png'
-                alt='1DayMoist'
+                alt="moist"
                 borderRadius='md' />
               <Stack mt='6' spacing='3'>
                 <Heading size='sm'>Acuvue 1 Day Moist 90Pk</Heading>

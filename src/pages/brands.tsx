@@ -1,7 +1,8 @@
 import React from 'react'
+import { NextPage } from 'next';
 import { Heading, Text, Flex, Container, Stack, Grid, GridItem, Image } from '@chakra-ui/react'
 
-const Brands = () => {
+const Brands: NextPage = () => {
     return (
         <>
             <Container
@@ -26,46 +27,46 @@ const Brands = () => {
 
                     >
                         <GridItem>
-                            <Image src="/images/s1-10.png" alt="brands" />
+                            <Image src="/images/Gucci-logo.png" alt="Gucci" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Tom-Ford-logo.png" alt="brands" />
+                            <Image src="/images/Tom-Ford-logo.png" alt="Tom" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Prada-Logo.png" alt="brands" />
+                            <Image src="/images/Prada-Logo.png" alt="Prada" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Celine-Logo.png" alt="brands" />
+                            <Image src="/images/Celine-Logo.png" alt="Celine" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Saint-Laurent-Logo.png" alt="brands" />
+                            <Image src="/images/Saint-Laurent-Logo.png" alt="Saint" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Lindberg.png" alt="brands" />
+                            <Image src="/images/Lindberg.png" alt="Lindberg" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Chloe-Logo.png" alt="brands" />
+                            <Image src="/images/Chloe-Logo.png" alt="Chloe" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Bottega-Veneta-Logo.png" alt="brands" />
+                            <Image src="/images/Bottega-Veneta-Logo.png" alt="Bottega" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Chanel-Logo.png" alt="brands" />
+                            <Image src="/images/Chanel-Logo.png" alt="Chanel" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Givenchy-Logo.png" alt="brands" />
+                            <Image src="/images/Givenchy-Logo.png" alt="Givenchy" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Dolce-And-Gabbana-Logo.png" alt="brands" />
+                            <Image src="/images/Dolce-And-Gabbana-Logo.png" alt="Dolce" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/RayBan-Logo.png" alt="brands" />
+                            <Image src="/images/RayBan-Logo.png" alt="RayBan" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Oakely-logo.png" alt="brands" />
+                            <Image src="/images/Oakely-logo.png" alt="Oakely" />
                         </GridItem>
                         <GridItem>
-                            <Image src="/images/Dior-logo.png" alt="brands" />
+                            <Image src="/images/Dior-logo.png" alt="Dior" />
                         </GridItem>
                     </Grid>
                 </Stack>
