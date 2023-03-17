@@ -61,9 +61,6 @@ const ContactForm = () => {
                             Send us a Email!
                         </Button>
                     </Link>
-                    <Button >
-                        (604)423-3603
-                    </Button>
 
                 </Stack>
 
