@@ -43,7 +43,7 @@ const Information = () => {
         >
           <Stack spacing='3'>
             <Heading size='md'>Information</Heading>
-            <Link href="/termsofcondition">
+            <Link href="/TOS">
               <Text
                 _hover={{
                   color: "orange.400",
