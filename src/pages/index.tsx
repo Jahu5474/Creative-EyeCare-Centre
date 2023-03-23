@@ -243,7 +243,7 @@ const Home: NextPage = () => (
         </Card>
       </Stack>
     </motion.div>
-  </Container>
+  </Container >
 
 );
 
