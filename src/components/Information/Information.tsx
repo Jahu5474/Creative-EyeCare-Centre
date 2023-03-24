@@ -54,7 +54,7 @@ const Information = () => {
               </Text>
             </Link>
 
-            <Link href="/termsofcondition">
+            <Link href="/privacyAndPolicy">
               <Text
                 _hover={{
                   color: "orange.400",
@@ -65,7 +65,7 @@ const Information = () => {
               </Text>
             </Link>
 
-            <Link href="/termsofcondition">
+            <Link href="/RWS">
               <Text
                 _hover={{
                   color: "orange.400",

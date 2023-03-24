@@ -1,7 +1,7 @@
+import { Container, Heading, Stack } from '@chakra-ui/react';
 import React from 'react';
-import { Container, Heading, Stack } from '@chakra-ui/react'
 
-const PAP = () => {
+const RWS = () => {
     return (
         <>
             <Container
@@ -9,11 +9,14 @@ const PAP = () => {
             >
                 <Stack
                     display={{ base: "flex", md: "flex" }}
-                    justify="center"
                     align="center"
+                    justify="center"
+                    gap={3}
                 >
-                    <Heading>
-                        Privacy and Policy
+                    <Heading
+                        fontSize="2xl"
+                    >
+                        Return, Warranty, and Shipping
                     </Heading>
                 </Stack>
             </Container>
@@ -21,4 +24,4 @@ const PAP = () => {
     )
 }
 
-export default PAP;
+export default RWS;
