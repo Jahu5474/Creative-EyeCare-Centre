@@ -7,7 +7,6 @@ const TOS = () => {
         <>
             <Container
                 maxW="container.lg"
-                h="100vh"
             >
                 <Stack
                     display={{ base: "flex", md: "flex" }}
@@ -15,7 +14,7 @@ const TOS = () => {
                     direction="column"
                     justify="center"
                     align="center"
-                    gap="3"
+                    gap={3}
                 >
                     <Heading
 
