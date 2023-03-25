@@ -17,7 +17,7 @@ const TOS = () => {
                     gap={3}
                 >
                     <Heading
-
+                        fontSize="3xl"
                         mt={4}
                     >
                         Terms of Conditions

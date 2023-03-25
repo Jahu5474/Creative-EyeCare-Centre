@@ -18,7 +18,7 @@ const PAP = () => {
                 >
                     <Heading
                         className={styles.center}
-                        fontSize="2xl"
+                        fontSize="3xl"
                         mt={4}
                     >
                         Privacy and Policy
