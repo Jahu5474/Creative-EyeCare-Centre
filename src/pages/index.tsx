@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import { Box, Flex, Container, Image, Heading, Text, Stack, Button, Card, CardBody, Divider, CardFooter, ButtonGroup } from "@chakra-ui/react"
-import Link from 'next/link'
+import { Box, Flex, Container, Heading, Image, Text, Stack, Button, Card, CardBody, Divider, CardFooter, ButtonGroup } from "@chakra-ui/react"
+import Link from 'next/link';
 import { motion, MotionConfig, motionValue, useTransform } from 'framer-motion'
 import ImageSlider from '../components/ImageSlider/ImageSlider'
 
@@ -54,8 +54,8 @@ const Home: NextPage = () => (
         <Box>
           <Image
             boxShadow="lg"
-            objectFit="cover"
             borderRadius="md"
+            objectFit="cover"
             src="/images/jimin.png"
             alt="jimin"
             mb="4"
