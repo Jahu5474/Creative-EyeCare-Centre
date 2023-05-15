@@ -1,3 +1,3 @@
-# Creative Eyecare's Website (In Progress)
+# Creative Eyecare's Website
 
 Optical shop based in Vancouver on Robson st.
